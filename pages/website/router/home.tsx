@@ -1,3 +1,5 @@
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+
 const LapisHome = () => {
   var images = [
     "https://lapisbot.xyz/getcard/1670351337902-534619073.png",
@@ -53,125 +55,48 @@ const LapisHome = () => {
   });
 
   return (
-    <div className="flex flex-col-reverse container mx-auto sm:flex-row">
-      <div className="m-40">
-        <h1>Lapis Bot</h1>
-        <p className="lapis_font">enjoy the new card collector bot</p>
-        <br />
-        <ul className="section_one_content__features">
-          <li>
-            <svg
-              width="15px"
-              height="15px"
-              viewBox="0 0 117 117"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-            >
-              <title />
-              <desc />
-              <defs />
-              <g
-                fill="none"
-                fillRule="evenodd"
-                id="Page-1"
-                stroke="none"
-                strokeWidth="1"
-              >
-                <g fillRule="nonzero" id="correct">
-                  <path
-                    d="M34.5,55.1 C32.9,53.5 30.3,53.5 28.7,55.1 C27.1,56.7 27.1,59.3 28.7,60.9 L47.6,79.8 C48.4,80.6 49.4,81 50.5,81 C50.6,81 50.6,81 50.7,81 C51.8,80.9 52.9,80.4 53.7,79.5 L101,22.8 C102.4,21.1 102.2,18.5 100.5,17 C98.8,15.6 96.2,15.8 94.7,17.5 L50.2,70.8 L34.5,55.1 Z"
-                    fill="#17AB13"
-                    id="Shape"
-                  />
-                  <path
-                    d="M89.1,9.3 C66.1,-5.1 36.6,-1.7 17.4,17.5 C-5.2,40.1 -5.2,77 17.4,99.6 C28.7,110.9 43.6,116.6 58.4,116.6 C73.2,116.6 88.1,110.9 99.4,99.6 C118.7,80.3 122,50.7 107.5,27.7 C106.3,25.8 103.8,25.2 101.9,26.4 C100,27.6 99.4,30.1 100.6,32 C113.1,51.8 110.2,77.2 93.6,93.8 C74.2,113.2 42.5,113.2 23.1,93.8 C3.7,74.4 3.7,42.7 23.1,23.3 C39.7,6.8 65,3.9 84.8,16.2 C86.7,17.4 89.2,16.8 90.4,14.9 C91.6,13 91,10.5 89.1,9.3 Z"
-                    fill="#4A4A4A"
-                    id="Shape"
-                  />
-                </g>
-              </g>
-            </svg>
-            <p className="lapis_font">Trade Items with your friends</p>
-          </li>
-          <li>
-            <svg
-              width="15px"
-              height="15px"
-              viewBox="0 0 117 117"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-            >
-              <title />
-              <desc />
-              <defs />
-              <g
-                fill="none"
-                fillRule="evenodd"
-                id="Page-1"
-                stroke="none"
-                strokeWidth="1"
-              >
-                <g fillRule="nonzero" id="correct">
-                  <path
-                    d="M34.5,55.1 C32.9,53.5 30.3,53.5 28.7,55.1 C27.1,56.7 27.1,59.3 28.7,60.9 L47.6,79.8 C48.4,80.6 49.4,81 50.5,81 C50.6,81 50.6,81 50.7,81 C51.8,80.9 52.9,80.4 53.7,79.5 L101,22.8 C102.4,21.1 102.2,18.5 100.5,17 C98.8,15.6 96.2,15.8 94.7,17.5 L50.2,70.8 L34.5,55.1 Z"
-                    fill="#17AB13"
-                    id="Shape"
-                  />
-                  <path
-                    d="M89.1,9.3 C66.1,-5.1 36.6,-1.7 17.4,17.5 C-5.2,40.1 -5.2,77 17.4,99.6 C28.7,110.9 43.6,116.6 58.4,116.6 C73.2,116.6 88.1,110.9 99.4,99.6 C118.7,80.3 122,50.7 107.5,27.7 C106.3,25.8 103.8,25.2 101.9,26.4 C100,27.6 99.4,30.1 100.6,32 C113.1,51.8 110.2,77.2 93.6,93.8 C74.2,113.2 42.5,113.2 23.1,93.8 C3.7,74.4 3.7,42.7 23.1,23.3 C39.7,6.8 65,3.9 84.8,16.2 C86.7,17.4 89.2,16.8 90.4,14.9 C91.6,13 91,10.5 89.1,9.3 Z"
-                    fill="#4A4A4A"
-                    id="Shape"
-                  />
-                </g>
-              </g>
-            </svg>
-            <p className="lapis_font">Gift cards to your friends</p>
-          </li>
-          <li>
-            <svg
-              width="15px"
-              height="15px"
-              viewBox="0 0 117 117"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-            >
-              <title />
-              <desc />
-              <defs />
-              <g
-                fill="none"
-                fillRule="evenodd"
-                id="Page-1"
-                stroke="none"
-                strokeWidth="1"
-              >
-                <g fillRule="nonzero" id="correct">
-                  <path
-                    d="M34.5,55.1 C32.9,53.5 30.3,53.5 28.7,55.1 C27.1,56.7 27.1,59.3 28.7,60.9 L47.6,79.8 C48.4,80.6 49.4,81 50.5,81 C50.6,81 50.6,81 50.7,81 C51.8,80.9 52.9,80.4 53.7,79.5 L101,22.8 C102.4,21.1 102.2,18.5 100.5,17 C98.8,15.6 96.2,15.8 94.7,17.5 L50.2,70.8 L34.5,55.1 Z"
-                    fill="#17AB13"
-                    id="Shape"
-                  />
-                  <path
-                    d="M89.1,9.3 C66.1,-5.1 36.6,-1.7 17.4,17.5 C-5.2,40.1 -5.2,77 17.4,99.6 C28.7,110.9 43.6,116.6 58.4,116.6 C73.2,116.6 88.1,110.9 99.4,99.6 C118.7,80.3 122,50.7 107.5,27.7 C106.3,25.8 103.8,25.2 101.9,26.4 C100,27.6 99.4,30.1 100.6,32 C113.1,51.8 110.2,77.2 93.6,93.8 C74.2,113.2 42.5,113.2 23.1,93.8 C3.7,74.4 3.7,42.7 23.1,23.3 C39.7,6.8 65,3.9 84.8,16.2 C86.7,17.4 89.2,16.8 90.4,14.9 C91.6,13 91,10.5 89.1,9.3 Z"
-                    fill="#4A4A4A"
-                    id="Shape"
-                  />
-                </g>
-              </g>
-            </svg>
-            <p className="lapis_font">Create your own card album</p>
-          </li>
-        </ul>
+    <div className="flex flex-col-reverse h-full container text-center space-y-20 sm:flex-row">
+      <div className="mt-40 flex flex-col gap-4 text-center sm:flex-1">
         <div>
-          <a className="link_buttons lapis_font" href="">
+          <h1 className="text-white text-3xl font-extrabold">Lapis Bot</h1>
+          <p className="text-white text-lg font-extrabold">
+            enjoy the new card collector bot
+          </p>
+        </div>
+        <div className="flex flex-col gap-1 w-full justify-evenly items-center">
+          <div className="flex items-center">
+            <IoMdCheckmarkCircleOutline className="text-white mr-1"></IoMdCheckmarkCircleOutline>
+            <p className="text-white -tracking-wider">
+              Trade Items with your friends
+            </p>
+          </div>
+          <div className="flex items-center">
+            <IoMdCheckmarkCircleOutline className="text-white mr-1"></IoMdCheckmarkCircleOutline>
+            <p className="text-white -tracking-wider">
+              Gift cards to your friends
+            </p>
+          </div>
+          <div className="flex items-center">
+            <IoMdCheckmarkCircleOutline className="text-white mr-1"></IoMdCheckmarkCircleOutline>
+            <p className="text-white -tracking-wider">
+              Create your own card album
+            </p>
+          </div>
+        </div>
+        <div className="mt-5">
+          <a
+            className="p-4 bg-blue-400 rounded-xl transition-all delay-200 ease-in cursor-pointer hover:bg-slate-500 hover:text-white"
+            href=""
+          >
             Invite Lapis
           </a>
         </div>
       </div>
-      <div className="relative">{createCards}</div>
+      <div className="relative w-full h-[40vh] sm:flex-1">
+        <div className="absolute w-[60%] h-full m-auto left-0 top-0 bottom-0 right-0">
+          {createCards}
+        </div>
+      </div>
     </div>
   );
 };
