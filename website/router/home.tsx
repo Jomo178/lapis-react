@@ -101,4 +101,99 @@ const SectionOne = () => {
   );
 };
 
-export default SectionOne;
+const SectionTwo = () => {
+  return (
+    <div className="mt-14 container">
+      <div className="flex flex-col text-center gap-2 w-[50%] m-auto">
+        <h1 className="text-4xl text-white">
+          <strong>Features</strong>
+        </h1>
+        <hr className="w-full h-6 relative mx-auto outline-none rounded-none" />
+      </div>
+      <div className="section_two_contents_row">
+        <div className="section_two_contents_row_one">
+          <h1 className="lapis_font">Friendly Support Team</h1>
+          <p className="lapis_font">
+            Our support server has a friendly staff team available to answer any
+            questions you may have.
+          </p>
+          <a
+            className="lapis_font link_buttons"
+            href="https://discord.gg/lapis"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Lapis Support Server
+          </a>
+        </div>
+        {/* <div
+          className="section_two_contents_row_images"
+          style={{
+            background: URL(
+              "https://cdn.discordapp.com/attachments/995271541145227365/1065619745564540969/image.png"
+            ),
+          }}
+        ></div> */}
+      </div>
+      <div className="section_two_contents_row section_two_contents_row_images_reverse">
+        <div className="section_two_contents_row_one">
+          <h1 className="lapis_font">Easy To Use</h1>
+          <p className="lapis_font">
+            Our commands are very intuitive and easy to understand. Even I can
+            understand them, whoever I am...
+          </p>
+          <a
+            className="lapis_font link_buttons"
+            href="https://discord.gg/lapis"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Lapis command list
+          </a>
+        </div>
+        {/* <div
+          className="section_two_contents_row_images"
+          style="
+        background: url(https://cdn.discordapp.com/attachments/1001210969424400495/1065664132273152041/image.png)
+          left center / contain no-repeat;
+      "
+        ></div> */}
+      </div>
+      <div className="section_two_contents_row">
+        <div className="section_two_contents_row_one">
+          <h1 className="lapis_font">Constantly Updated</h1>
+          <p className="lapis_font">
+            Lapis is almost always updated with the newest features so you'll
+            never miss out!
+          </p>
+          <a
+            className="lapis_font link_buttons"
+            href="https://discord.gg/lapis"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Lapis logs
+          </a>
+        </div>
+        {/* <div
+          className="section_two_contents_row_images"
+          style="
+        background: url(https://cdn.discordapp.com/attachments/1001210969424400495/1065665403109519491/image.png)
+          right center / contain no-repeat;
+      "
+        ></div> */}
+      </div>
+    </div>
+  );
+};
+
+const LapisHome = () => {
+  return (
+    <>
+      <SectionOne></SectionOne>
+      <SectionTwo></SectionTwo>
+    </>
+  );
+};
+
+export default LapisHome;
