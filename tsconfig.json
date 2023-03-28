@@ -16,7 +16,8 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@models": ["lib/models/*", "lib/models"]
+      "@models": ["lib/models/*", "lib/models"],
+      "@styles": ["styles"]
       // "@functions": ["components/functions"],
       // "@types": ["components/types"]
     }

@@ -103,17 +103,19 @@ const SectionOne = () => {
 
 const SectionTwo = () => {
   return (
-    <div className="mt-14 container">
+    <div className="mt-14 container m-auto">
       <div className="flex flex-col text-center gap-2 w-[50%] m-auto">
         <h1 className="text-4xl text-white">
           <strong>Features</strong>
         </h1>
-        <hr className="w-full h-6 relative mx-auto outline-none rounded-none" />
+        <hr className="w-full h-6 relative mx-auto border-none outline-none before:bg-white before:absolute before:left-0 before:top-2/4 before:w-full before:h-1" />
       </div>
-      <div className="section_two_contents_row">
-        <div className="section_two_contents_row_one">
-          <h1 className="lapis_font">Friendly Support Team</h1>
-          <p className="lapis_font">
+      <div className="flex flex-col sm:flex-row">
+        <div className="flex gap-2 flex-col text-center">
+          <h1 className="font-mono text-gray-500 text-xl font-extrabold">
+            Friendly Support Team
+          </h1>
+          <p className="font-mono text-white ">
             Our support server has a friendly staff team available to answer any
             questions you may have.
           </p>
@@ -126,14 +128,12 @@ const SectionTwo = () => {
             Lapis Support Server
           </a>
         </div>
-        {/* <div
-          className="section_two_contents_row_images"
+        <div
+          className="h-52 w-full bg-no-repeat bg-center"
           style={{
-            background: URL(
-              "https://cdn.discordapp.com/attachments/995271541145227365/1065619745564540969/image.png"
-            ),
+            backgroundImage: `url("https://cdn.discordapp.com/attachments/995271541145227365/1065619745564540969/image.png")`,
           }}
-        ></div> */}
+        ></div>
       </div>
       <div className="section_two_contents_row section_two_contents_row_images_reverse">
         <div className="section_two_contents_row_one">
