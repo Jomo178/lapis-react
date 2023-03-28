@@ -1,6 +1,6 @@
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
-const LapisHome = () => {
+const SectionOne = () => {
   var images = [
     "https://lapisbot.xyz/getcard/1670351337902-534619073.png",
     "http://lapisbot.xyz/getcard/1660400285670-502358732.png",
@@ -101,4 +101,4 @@ const LapisHome = () => {
   );
 };
 
-export default LapisHome;
+export default SectionOne;

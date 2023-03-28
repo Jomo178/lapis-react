@@ -1,5 +1,5 @@
-import Header from "./website/components/header";
-import LapisHome from "./website/router/home";
+import Header from "../website/components/header";
+import LapisHome from "../website/router/home/home";
 
 export default function Home() {
   return (
