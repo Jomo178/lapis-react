@@ -1,41 +1,21 @@
 import { useEffect } from "react";
+import { io } from "socket.io-client";
 
-function WebSocketComponent() {
+const Home = () => {
   useEffect(() => {
-    setTimeout(() => {
-      // create a new WebSocket instance
-      const socket = new WebSocket(
-        "wss://jomo178-potential-umbrella-7x7q7rprxwxfpqwq-3000.preview.app.github.dev/api/hello"
-      );
+    fetch("/api/socket");
 
-      // event listener for when the connection is established
-      socket.onopen = () => {
-        console.log("WebSocket connected");
-      };
+    const socket = io();
 
-      // event listener for incoming messages
-      socket.onmessage = (event) => {
-        console.log("WebSocket message received: ", event.data);
-      };
+    socket.emit("hello from client", 5, "6", { 7: Uint8Array.from([8]) });
 
-      // event listener for errors
-      socket.onerror = (error) => {
-        console.error("WebSocket error: ", error);
-      };
-
-      // event listener for when the connection is closed
-      socket.onclose = () => {
-        console.log("WebSocket disconnected");
-      };
-
-      // clean up the WebSocket connection when the component is unmounted
-      return () => {
-        socket.close();
-      };
-    }, 1000); // wait for 1 second before creating the WebSocket instance
+    // receive a message from the server
+    socket.on("hello from server", (...args) => {
+      // ...
+    });
   }, []);
 
-  return <div>WebSocket Component</div>;
-}
+  return <h1>Hello</h1>;
+};
 
-export default WebSocketComponent;
+export default Home;
