@@ -1,11 +1,11 @@
 import axios from "axios";
-import { AccessTokenResponse } from "./types";
+import { AccessTokenResponse, UsersDiscordInfo } from "./types";
 
 export class DiscordFetch {
   static async secret(
     type: "refresh_token" | "authorization_code",
     token: string
-  ): Promise<undefined | AccessTokenResponse> {
+  ) {
     const data = {
       client_id: process.env.client_id,
       client_secret: process.env.client_secret,
@@ -18,7 +18,7 @@ export class DiscordFetch {
     };
 
     try {
-      const fetchedData = await axios.post<AccessTokenResponse>(
+      const response = await axios.post<AccessTokenResponse>(
         `${process.env.api_endpoint}/oauth2/token`,
         data,
         {
@@ -28,14 +28,36 @@ export class DiscordFetch {
         }
       );
 
-      return fetchedData.data as AccessTokenResponse;
+      return response.data as AccessTokenResponse;
     } catch (error) {
       console.error(error);
       return undefined;
     }
   }
 
-  static async user(author: string = "Bot", id: string = "@me", ) {}
+  static async user(
+    author: string = "Bot",
+    token: string,
+    id: boolean = false
+  ) {
+    try {
+      const response = await axios.get<UsersDiscordInfo>(
+        `${process.env.api_endpoint}/users/${id ? token : "@me"}`,
+        {
+          headers: {
+            authorization: `${author} ${
+              author == "Bot" ? process.env.bot_token : token
+            }`,
+          },
+        }
+      );
+
+      return response.data as UsersDiscordInfo;
+    } catch (error) {
+      console.error(error);
+      return undefined;
+    }
+  }
 }
 
 export class Base64 {
