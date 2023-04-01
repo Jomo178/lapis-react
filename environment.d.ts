@@ -13,6 +13,7 @@ declare global {
       redirect_uri_lapis: string;
       oauth2Link_lapis: string;
       mongoose: any;
+      api_endpoint: string;
     }
   }
 }
