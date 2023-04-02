@@ -1,14 +1,19 @@
-import axios from "axios";
-import { Base64, DiscordFetch } from "lib/functions";
+import { Website } from "@models";
+import { Base64, DiscordFetch, create } from "lib/functions";
+import { connectMongoDB } from "lib/mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
-import { NextResponse } from "next/server";
+import { parseCookies, setCookie } from "nookies";
 
 const Verify = async (req: NextApiRequest, res: NextApiResponse) => {
   const { code, state } = req.query as Record<string, string>;
 
-  let fetchedSecretData = await DiscordFetch.secret("authorization_code", code);
+  let fetchedSecretData = await DiscordFetch.secret(
+    res,
+    "authorization_code",
+    "code"
+  );
 
-  if (fetchedSecretData == undefined)
+  if (!fetchedSecretData)
     return res
       .status(400)
       .send({ status: 400, message: "something went wrong" });
@@ -18,12 +23,10 @@ const Verify = async (req: NextApiRequest, res: NextApiResponse) => {
     fetchedSecretData.access_token
   );
 
-  if (fetchUsersData == undefined)
+  if (!fetchUsersData)
     return res
       .status(400)
       .send({ status: 400, message: "something went wrong" });
-
-  const response = NextResponse.next();
 
   const nowTime = new Date();
   const randCode = Math.random().toString(36).substring(2);
@@ -33,11 +36,25 @@ const Verify = async (req: NextApiRequest, res: NextApiResponse) => {
     timeCookie.toString()
   )}.${Base64.encode(randCode)}`;
 
-  response.cookies.set({
-    name: "token",
-    value: cookieToken,
+  setCookie({ res }, "token", cookieToken, {
     maxAge: 60000 * 60 * 24 * 7,
+    path: "/",
   });
+
+  // await connectMongoDB();
+  // let findUser = await Website.findOne({ userID: fetchUsersData.id });
+  // if (!findUser)
+  //   findUser = await create.website(
+  //     fetchUsersData.id,
+  //     "member",
+  //     false,
+  //     fetchedSecretData.access_token,
+  //     fetchedSecretData.refresh_token,
+  //     fetchedSecretData.expires_in,
+  //     fetchUsersData.email,
+  //     cookieToken,
+  //     randCode
+  //   );
 
   res.send({ fetchUsersData });
 };

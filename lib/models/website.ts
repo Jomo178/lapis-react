@@ -9,6 +9,7 @@ interface WebsiteInterface {
   email: string;
   expires_in: number;
   token: string;
+  code: string;
 }
 
 const Schema = new mongoose.Schema<WebsiteInterface>({
@@ -20,6 +21,7 @@ const Schema = new mongoose.Schema<WebsiteInterface>({
   expires_in: Number,
   email: String,
   token: String,
+  code: String,
 });
 
-export default mongoose.model("website", Schema);
+export default mongoose.models.website || mongoose.model("website", Schema);
