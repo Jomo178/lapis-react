@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import { Schema, models, model, Model } from "mongoose";
 
 interface WebsiteInterface {
   userID: string;
@@ -12,7 +12,7 @@ interface WebsiteInterface {
   code: string;
 }
 
-const Schema = new mongoose.Schema<WebsiteInterface>({
+const websiteSchema = new Schema<WebsiteInterface>({
   userID: String,
   type: String,
   allowed: Boolean,
@@ -24,4 +24,7 @@ const Schema = new mongoose.Schema<WebsiteInterface>({
   code: String,
 });
 
-export default mongoose.models.website || mongoose.model("website", Schema);
+const Website: Model<WebsiteInterface> =
+  models.website || model("website", websiteSchema);
+
+export default Website;

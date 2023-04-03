@@ -8,9 +8,15 @@ export const connectMongoDB = async () => {
   if (mongoose.connection.readyState == 1) {
     console.log("mongo is already connected!");
 
-    return mongoose.connection.asPromise();
+    return await mongoose.connection.asPromise();
   } else {
     console.log("mongo connected");
-    return await mongoose.connect(process.env.mongooseURI);
+
+    try {
+      return await mongoose.connect(process.env.mongooseURI);
+    } catch (error) {
+      console.error("Error connecting to MongoDB:", error);
+      throw error;
+    }
   }
 };

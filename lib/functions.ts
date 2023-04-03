@@ -1,11 +1,9 @@
 import { Website } from "@models";
 import axios from "axios";
-import { NextApiResponse } from "next";
 import { AccessTokenResponse, UsersDiscordInfo } from "./types";
 
 export class DiscordFetch {
   static async secret(
-    res: NextApiResponse,
     type: "refresh_token" | "authorization_code",
     token: string
   ) {
@@ -34,7 +32,7 @@ export class DiscordFetch {
       return response.data as AccessTokenResponse;
     } catch (error) {
       console.error(error);
-      return res.send("Hello");
+      return;
     }
   }
 
@@ -58,7 +56,7 @@ export class DiscordFetch {
       return response.data as UsersDiscordInfo;
     } catch (error) {
       console.error(error);
-      return undefined;
+      return;
     }
   }
 }
@@ -108,4 +106,17 @@ export class create {
       code,
     });
   }
+}
+
+export function getTokenCookieParams(token: string) {
+  const splitString = token.split(".");
+  const decodedValues = splitString.map(Base64.decode);
+
+  const obj = {
+    id: decodedValues[0],
+    time: decodedValues[1],
+    code: decodedValues[2],
+  };
+
+  return obj;
 }
